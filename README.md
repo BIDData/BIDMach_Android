@@ -1,7 +1,9 @@
 # BIDMach_Android
+
+##Use Instructions
 To run the sample android app written in Scala:
 1. Install sbt and Android SDK. Make sure sbt and adb are accessible from terminal.
-2. Cd to app/
+2. Cd to `app/`
 3. Connect Android device to computer. Verify connection by `adb devices`
 4. Run `adb -d logcat System.out:I *:S` to view all messages from println
 5. Run `sbt run` to deploy and run app to device
