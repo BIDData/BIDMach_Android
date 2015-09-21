@@ -23,7 +23,6 @@ class MainActivity extends Activity {
 
 	override def onCreate(savedInstanceState: Bundle) = {
 		println("In MainActivity for BIDMach.")
-		/*
 		println("Loading Data..")
 		val a = loadSMat(dataPath + "docs.smat.lz4")
 		println("Loading Labels..")
@@ -32,6 +31,6 @@ class MainActivity extends Activity {
 		val (mm, mopts) = GLM.learner(a, c, 1)
 		println("Starting Training..")
 		mm.train
-		println("Finished Training!")*/
+		println("Finished Training!")
 	}
 }
