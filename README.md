@@ -21,6 +21,8 @@ To run the sample android app written in Scala:
 4. Run `adb -d logcat System.out:I *:S` to view all messages from println
 5. Run `sbt run` to deploy and run app to device (on a separate terminal)
 
+Note: Please make sure that `platformTarget in Android` in `build.sbt` is set to the correct Android API level of the device/emulator. 
+
 Useful Commands:
 
 * Run `adb shell` to open shell to android device. 
