@@ -8,47 +8,23 @@
 * If we reduce the size of the datasets, we can get them to load successfully.
 * GLM learner works! (at least with the smaller datasets)
 * OpenCL working (at least with some Adreno GPU SDK samples)
+* Can now run custom OpenCL kernels through BIDMat
 
 ## Next Steps:
-* Verify data results on Android are consitent with typical desktop results.
-* Determine more robust process for running OpenCL kernels on Android
+* Build wrapper library for OpenCL in BIDMat
 * Start converting the ds_mult and sd_mult CUDA functions to OpenCL
-* Runtime conditional binding to OpenCL and CUDA
 
 ## Use Instructions
 
-Build both BIDMat and BIDMach with `sbt package`, and then copy over BIDMat.jar and BIDMach.jar to the app/libs/ folder.
-
-Generate smaller, uncompressed versions of the sample data:
-
-    # In the BIDMach directory, with data files downloaded
-    $ ./getdata.sh
-    $ ./bidmach
-
-    val docs = loadSMat("./data/rcv1/docs.smat.lz4")
-    val feature_count = sum(docs > 0, 2)
-    val indices = find(feature_count > 10)
-    val sdocs = docs(indices, 0 -> 4000)
-    saveSMat("../BIDMach_Android/sdocs.smat");
-
-    val cats = loadFMat("./data/rcv1/cats.fmat.lz4")
-    val scats = cats(?, 0 -> 4000)
-    saveFMat("../BIDMach_Android/scats.fmat")
-
-To copy the training files:
-
-1. Make sure adb has root access first by running `adb root`.
-2. Use `adb push [FILENAME] [TARGET DIRECTORY]` or a 3rd party tool that can copy files to an android system.
-3. Currently the app expects `sdocs.smat` and `scats.fmat` to be under `/mnt/sdcard/bidmach_data/`
-4. Note, we don't use the compressed versions, as the lz4 decompressor is not currently working on Android.
-
-To run the sample android app written in Scala:
-
-1. Install sbt and Android SDK. Make sure sbt and adb are accessible from terminal.
-2. cd to `app/`
-3. Connect Android device to computer. Verify connection by typing `adb devices`
-4. Run `adb -d logcat BIDMach_Android:* System.out:* AndroidRuntime:* *:S` to view all messages from println
-5. Run `sbt android:run` to deploy and run app to device
+1. Install Scala, sbt, the Android SDK, the Android NDK, and the Adreno GPU SDK.
+2. Build both BIDMat and BIDMach with `sbt package`, and then copy over BIDMat.jar and BIDMach.jar to the app/libs/ folder.
+3. Copy libOpenCL.so from your device (usually /vendor/lib/libOpenCL.so) to (*bidmat_path_whatever*/lib/libOpenCL.so)
+2. In BIDMat, run ./build_android_native.sh (this will build the OpenCL native code and copy it into this folder for testing. make sure this folder is called BIDMat_Android in the same directory as BIDMat)
+3. To run the sample android app written in Scala:
+5. cd to `app/`
+6. Connect Android device to computer. Verify connection by typing `adb devices` and see your device id come up.
+7. Run `adb -d logcat BIDMach_Android:* HELLO_CL:* System.out:* AndroidRuntime:* *:S` to view all messages from println
+8. Run `sbt android:run` to deploy and run app to device
 
 Note: Please make sure that `platformTarget in Android` in `build.sbt` is set to the correct Android API level of the device/emulator. 
 
@@ -56,7 +32,7 @@ Note: Please make sure that `platformTarget in Android` in `build.sbt` is set to
 
 * Run `adb shell` to open a remote shell on the android device. 
 
-The following commands assume you're in shell already. This is not required, as one can simply issue `adb shell <cmd>` to run shell commands as well. 
+The following commands assume you're in the device shell already. This is not required, as one can simply issue `adb shell <cmd>` to run shell commands as well. 
 
 * Run `am start -n com.BIDMach/.MainActivity` to run the app again
 * Run `pm uninstall com.BIDMach` to uninstall the app.

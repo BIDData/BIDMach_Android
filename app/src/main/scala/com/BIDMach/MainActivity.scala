@@ -10,10 +10,11 @@ import android.app.Activity
 import android.util.Log
 
 //BIDMach
-import BIDMat.Mat
-import BIDMat.MatFunctions._
-import BIDMach.Learner
-import BIDMach.models.GLM
+import edu.berkeley.bid.HelloCL
+//import BIDMat.Mat
+//import BIDMat.MatFunctions._
+//import BIDMach.Learner
+//import BIDMach.models.GLM
 
 class MainActivity extends Activity {
 
@@ -24,9 +25,7 @@ class MainActivity extends Activity {
     super.onCreate(savedInstanceState)
 
     // turn off native math libraries
-    Mat.useMKL = false
-
-    Log.d(TAG, "BIDMach_Android")
+    //Mat.useMKL = false
 
     // NOTE: weird runtime error if you remove this
     // ---
@@ -38,19 +37,24 @@ class MainActivity extends Activity {
     //
     // doing `"foo " * 10` forces the scala String definition to be loaded,
     // preventing the method not found error
-    println("foo " * 10)
+    Log.d(TAG, "=" * 30)
 
-    Log.d(TAG, "Loading Data...")
+    Log.d(TAG, "BIDMach_Android")
+
+    val foo = new HelloCL()
+    foo.foo()
+
+    //Log.d(TAG, "Loading Data...")
 
     // load the smaller, uncompressed dataset
-    val scats = loadFMat(dataPath + "scats.fmat")
-    val sdocs = loadSMat(dataPath + "sdocs.smat")
+    //val scats = loadFMat(dataPath + "scats.fmat")
+    //val sdocs = loadSMat(dataPath + "sdocs.smat")
 
     // configure learner
-    val (mm, mopts) = GLM.learner(sdocs, scats, 1)
+    //val (mm, mopts) = GLM.learner(sdocs, scats, GLM.logistic)
 
-    Log.d(TAG, "Starting Training..")
-    mm.train
-    Log.d(TAG, "Finished Training!")
+    //Log.d(TAG, "Starting Training..")
+    //mm.train
+    //Log.d(TAG, "Finished Training!")
   }
 }
