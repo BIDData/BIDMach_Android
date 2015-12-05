@@ -27,5 +27,6 @@ proguardScala in Android := true
 
 proguardOptions in Android ++= Seq(
   "-ignorewarnings",
-  "-keep class scala.Dynamic"
+  "-keep class scala.Dynamic",
+  "-keep class org.jocl.*"
 )

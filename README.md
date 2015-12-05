@@ -9,10 +9,11 @@
 * GLM learner works! (at least with the smaller datasets)
 * OpenCL working (at least with some Adreno GPU SDK samples)
 * Can now run custom OpenCL kernels through BIDMat
+* JOCL wrapper library working
 
 ## Next Steps:
-* Build wrapper library for OpenCL in BIDMat
-* Start converting the ds_mult and sd_mult CUDA functions to OpenCL
+* Create OpenCL sparse / dense matrix classes in BIDMat
+* Start converting the ds_mult and sd_mult CUDA kernels to OpenCL
 
 ## Use Instructions
 
@@ -23,7 +24,7 @@
 3. To run the sample android app written in Scala:
 5. cd to `app/`
 6. Connect Android device to computer. Verify connection by typing `adb devices` and see your device id come up.
-7. Run `adb -d logcat BIDMach_Android:* HELLO_CL:* System.out:* AndroidRuntime:* *:S` to view all messages from println
+7. Run `adb -d logcat BIDMach_Android:* art:* System.out:* AndroidRuntime:* *:S` to view all messages from println
 8. Run `sbt android:run` to deploy and run app to device
 
 Note: Please make sure that `platformTarget in Android` in `build.sbt` is set to the correct Android API level of the device/emulator. 
