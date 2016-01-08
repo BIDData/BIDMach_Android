@@ -8,6 +8,7 @@ First, install the Google driver from the Android SDK Manager. Its under "SDK To
 ${ANDROID_SDK}/extras/google/usb_driver/android_winusb.inf Under [Google.NTamd64] (if you're on 64bit windows, else [Google.NT86]).
 Create entries for the hardware ids of the USB device like this:
 
+<pre>
 ;Inforce 6540
 %SingleAdbInterface%        = USB_Install, USB\VID_05C6&PID_9025&MI_00
 %CompositeAdbInterface%     = USB_Install, USB\VID_05C6&PID_9025&REV_????&MI_00
@@ -19,6 +20,7 @@ Create entries for the hardware ids of the USB device like this:
 %CompositeAdbInterface%     = USB_Install, USB\VID_05C6&PID_9025&REV_????&MI_03
 %SingleAdbInterface%        = USB_Install, USB\VID_05C6&PID_9025&MI_04
 %CompositeAdbInterface%     = USB_Install, USB\VID_05C6&PID_9025&REV_????&MI_04
+</pre>
 
 You can find the hardware address in Windows Device Manager. The Android board will show up as several devices with missing/bad 
 drivers. Right click on them, select "Properties" then "Details". Set the "Property" pulldown to "Hardware Ids" and the Ids 
