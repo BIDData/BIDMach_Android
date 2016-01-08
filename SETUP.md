@@ -83,5 +83,37 @@ adb push libsymphony-cpu-1.0.0.so /vendor/lib/libsymphony-cpu-1.0.0.so
 adb push libsymphony-gpu-1.0.0.so /vendor/lib/libsymphony-gpu-1.0.0.so
 </pre>
 
+For QSML, first we will build some sample programs. Do
+<pre>
+cd ${QSML_DIR}
+cd lp64                    // For 32bit pointers
+</pre>
+and you'll see once again a list of architectures. Assumining you have 32bit Android, do
+<pre> 
+cd arm-linux-androideabi/examples
+</pre>
+and then run the NDK builder with 
+<pre>
+ndk-build
+</pre>
+Change to the directory where your binaries were created:
+<pre>
+cd obj/local/armeabi/
+</pre> 
+and then you can copy the binaries and libs to a test directory and a lib directory in the devices path, e.g.
+<pre> 
+adb push BLASSolveExample /vendor/test/BLASSolveExample
+adb push CBLASExample /vendor/test/CBLASExample
+
+adb push libgnustl_shared.so /vendor/lib/libgnustl_shared.so
+adb push libQSML-0.14.0.so /vendor/lib/libQSML-0.14.0.so
+</pre>
+These binaries can be run directly from the ADB shell on the device. Do 
+<pre>
+adb shell                // gives you a shell on the device
+cd /vendor/test
+chmod 755 *
+./CBLASExample
+</pre>
 
 
