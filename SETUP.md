@@ -39,6 +39,14 @@ adb devices
 Note that the Qualcomm boards dont automatically start on power-up, you have to hit and hold the power on button. 
 
 ###Setting Paths to use ADB etc. 
+You need a copy of ant installed somewhere. Adjust the path below (/code/ant/bin) to the location of Ant's bin directory. 
+The following variables should be set in your .bashrc (including on Windows/Cygwin):
+
+<pre>
+export ANDROID_SDK=/c/Android/sdk
+export ANDROID_NDK=/c/Android/sdk/ndk-bundle
+export PATH=$PATH:$ANDROID_SDK/tools:$ANDROID_SDK/platform-tools:$ANDROID_NDK:/code/ant/bin
+</pre>
 
 ###Accessing the Filesystem on an Adroid Device
 
