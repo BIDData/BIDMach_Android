@@ -63,3 +63,25 @@ adb root
 adb remount
 </pre>
 adb 
+
+###Install QSML and Symphony
+
+QSML is a cross-hardware math library that implements BLAS. It currently runs on CPU only, but should eventually use the GPU. 
+Symphony is a runtime that support polymorphic hardware. You should download and install both tools from the Qualcomm dev site. First Symphony. Assume you installed it in ${SYMPHONY_DIR}, then on your host machine do:
+
+<pre> 
+cd ${SYMPHONY_DIR}
+ls
+</pre>
+and you will see the supported architectures. `arm-linux-androideabi` is 32bit ARM Android (Android API 21 and earlier). `aarch64-linux-android` is for 64bit ARM builds, (Android API 22 and later). Note that 32-bit applications should work on 64bit
+machines. Assuming you have a 32bit Android, do 
+<pre>
+cd arm-linux-androideabi/lib
+adb push libsymphony.so /vendor/lib/libsymphony.so
+adb push libsymphony-1.0.0.so /vendor/lib/libsymphony-1.0.0.so
+adb push libsymphony-cpu-1.0.0.so /vendor/lib/libsymphony-cpu-1.0.0.so
+adb push libsymphony-gpu-1.0.0.so /vendor/lib/libsymphony-gpu-1.0.0.so
+</pre>
+
+
+
