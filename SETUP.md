@@ -5,7 +5,7 @@ Windows requires a USB driver to use ADB to a devboard or phone. The devkits don
 so you have to edit the in inf file. 
 
 First, install the Google driver from the Android SDK Manager. Its under "SDK Tools". Once installed, you can find the file in:
-${ANDROID_SDK}/extras/google/usb_driver/android_winusb.inf Under [Google.NTamd64] (if you're on 64bit windows, else [Google.NT86]).
+${ANDROID_SDK}/extras/google/usb_driver/android_winusb.inf Under &#91;Google.NTamd64&#92; (if you're on 64bit windows, else &#91;Google.NT86&#92;).
 Create entries for the hardware ids of the USB device like this:
 
 <pre>
