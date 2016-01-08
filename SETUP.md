@@ -98,7 +98,7 @@ ndk-build
 </pre>
 Change to the directory where your binaries were created:
 <pre>
-cd obj/local/armeabi/
+cd libs/armeabi/
 </pre> 
 and then you can copy the binaries and libs to a test directory and a lib directory in the devices path, e.g.
 <pre> 
