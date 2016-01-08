@@ -31,3 +31,20 @@ will show up. Copy them into the driver inf. file.
 Once the driver inf file has been modified, go back to each of the ailing devices in device manager. Right click on each one, 
 select "Update Driver Software" and "Browse my computer for driver software". Browse to ${ANDROID_SDK}/extras/google/usb_driver,
 and click "Next". The driver should Install. 
+
+Check by running
+<pre>
+adb devices
+</pre>
+Note that the Qualcomm boards dont automatically start on power-up, you have to hit and hold the power on button. 
+
+###Setting Paths to use ADB etc. 
+
+###Accessing the Filesystem on an Adroid Device
+
+The filesystem is read-only by default. To be able to write to it, you should first switch to root mode, and then remount the filesystem read-write. You can do this with
+<pre>
+adb root
+adb remount
+</pre>
+adb 
