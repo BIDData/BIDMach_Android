@@ -1,5 +1,16 @@
 ### Setting up Snapdragon Dev Boards (similar for many Android phones)
 
+###Setting Paths to use ADB etc. 
+You need a copy of ant installed somewhere. Adjust the path below (/code/ant/bin) to the location of Ant's bin directory. 
+The following variables should be set in your .bashrc (including on Windows/Cygwin):
+
+<pre>
+export ANDROID_SDK=/c/Android/sdk
+export ANDROID_NDK=/c/Android/sdk/ndk-bundle
+export PATH=$PATH:$ANDROID_SDK/tools:$ANDROID_SDK/platform-tools:$ANDROID_NDK:/code/ant/bin
+</pre>
+This will put the SDK and NDK tools in your path. 
+
 #### Setting up the Windows Driver
 Windows requires a USB driver to use ADB to a devboard or phone. The devkits dont normally have hardware profiles in the driver, 
 so you have to edit the in inf file. 
@@ -36,17 +47,13 @@ Check by running
 <pre>
 adb devices
 </pre>
-Note that the Qualcomm boards dont automatically start on power-up, you have to hit and hold the power on button. 
 
-###Setting Paths to use ADB etc. 
-You need a copy of ant installed somewhere. Adjust the path below (/code/ant/bin) to the location of Ant's bin directory. 
-The following variables should be set in your .bashrc (including on Windows/Cygwin):
-
-<pre>
-export ANDROID_SDK=/c/Android/sdk
-export ANDROID_NDK=/c/Android/sdk/ndk-bundle
-export PATH=$PATH:$ANDROID_SDK/tools:$ANDROID_SDK/platform-tools:$ANDROID_NDK:/code/ant/bin
+You should see something like:
+<pre> 
+List of devices attached
+f00e0587        device
 </pre>
+Note that the Qualcomm dev boards dont automatically start on power-up, you have to hit and hold the power on button. 
 
 ###Accessing the Filesystem on an Adroid Device
 
