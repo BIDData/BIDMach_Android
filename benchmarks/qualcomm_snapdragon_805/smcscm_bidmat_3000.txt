@@ -1,0 +1,7 @@
+BIDMat SMCSCM n = 3000, density = 0.25, times = 5
+N     Iteration       Time    GFlops  CPU0    CPU1    CPU2    CPU3
+3000  1       13.557  1.4936928       true    true    false   false
+3000  2       13.522  1.4975591       true    true    false   false
+3000  3       13.511  1.4987783       true    true    false   false
+3000  4       13.475  1.5027825       true    true    false   false
+3000  5       13.476  1.502671        true    true    false   false

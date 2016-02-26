@@ -1,0 +1,63 @@
+CL SGEMM ADRENO - QUALCOMM SNAPDRAGON 805 ADRENO 420
+min=1024 max=1024 times=4 localSize=32
+N     Iteration       Time    GFlops
+1024.0        1.0     1.646   1.3046681
+1024.0        2.0     1.394   1.540519
+1024.0        3.0     1.42    1.5123124
+1024.0        4.0     1.373   1.5640813
+
+CL SGEMM ADRENO - QUALCOMM SNAPDRAGON 805 ADRENO 420
+min=1024 max=1024 times=4 localSize=64
+N     Iteration       Time    GFlops
+1024.0        1.0     1.12    1.9173961
+1024.0        2.0     1.154   1.8609043
+1024.0        3.0     1.147   1.8722614
+1024.0        4.0     1.145   1.8755317
+
+CL SGEMM ADRENO - QUALCOMM SNAPDRAGON 805 ADRENO 420
+min=1024 max=1024 times=4 localSize=128
+N     Iteration       Time    GFlops
+1024.0        1.0     0.994   2.1604462
+1024.0        2.0     1.05    2.0452228
+1024.0        3.0     1.045   2.0550084
+1024.0        4.0     1.038   2.0688667
+
+CL SGEMM ADRENO - QUALCOMM SNAPDRAGON 805 ADRENO 420
+min=1024 max=1024 times=4 localSize=256
+N     Iteration       Time    GFlops
+1024.0        1.0     0.737   2.913818
+1024.0        2.0     0.783   2.7426355
+1024.0        3.0     0.792   2.7114694
+1024.0        4.0     0.785   2.7356477
+
+CL SGEMM ADRENO - QUALCOMM SNAPDRAGON 805 ADRENO 420
+min=2048 max=2048 times=4 localSize=32
+N     Iteration       Time    GFlops
+2048.0        1.0     14.62   1.1750937
+2048.0        2.0     14.001  1.2270459
+2048.0        3.0     14.047  1.2230276
+2048.0        4.0     14.05   1.2227665
+
+CL SGEMM ADRENO - QUALCOMM SNAPDRAGON 805 ADRENO 420
+min=2048 max=2048 times=4 localSize=64
+N     Iteration       Time    GFlops
+2048.0        1.0     10.681  1.6084515
+2048.0        2.0     10.765  1.5959004
+2048.0        3.0     10.714  1.6034973
+2048.0        4.0     10.696  1.6061957
+
+CL SGEMM ADRENO - QUALCOMM SNAPDRAGON 805 ADRENO 420
+min=2048 max=2048 times=4 localSize=128
+N     Iteration       Time    GFlops
+2048.0        1.0     11.951  1.4375256
+2048.0        2.0     12.088  1.4212334
+2048.0        3.0     12.094  1.4205283
+2048.0        4.0     12.118  1.417715
+
+CL SGEMM ADRENO - QUALCOMM SNAPDRAGON 805 ADRENO 420
+min=2048 max=2048 times=4 localSize=256
+N     Iteration       Time    GFlops
+2048.0        1.0     11.787  1.4575269
+2048.0        2.0     11.845  1.4503899
+2048.0        3.0     11.851  1.4496557
+2048.0        4.0     11.843  1.4506348

@@ -1,0 +1,6 @@
+N     Iteration       Time    GFlops  CPU0    CPU1    CPU2    CPU3
+3000  1       13.666  1.4817791       true    true    false   false
+3000  2       13.511  1.4987783       true    true    false   false
+3000  3       13.628  1.4859109       true    true    false   false
+3000  4       13.584  1.490724        true    true    false   false
+3000  5       13.582  1.4909434       true    true    false   false

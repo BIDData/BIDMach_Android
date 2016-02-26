@@ -52,3 +52,8 @@ proguard/
 
 # Android Studio captures folder
 captures/
+
+# ignore libraries
+app/libs/
+# ignore native libraries
+app/src/main/libs

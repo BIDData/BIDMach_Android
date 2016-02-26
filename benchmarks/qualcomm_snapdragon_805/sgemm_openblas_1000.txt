@@ -1,0 +1,7 @@
+OpenBLAS SGEMM n = 1000, times = 5
+N     Iteration       Time    GFlops  CPU0    CPU1    CPU2    CPU3
+1000  1       0.349   5.730659        true    true    true    true
+1000  2       0.113   17.699116       true    true    true    true
+1000  3       0.113   17.699116       true    true    true    true
+1000  4       0.113   17.699116       true    true    true    true
+1000  5       0.114   17.54386        true    true    true    true

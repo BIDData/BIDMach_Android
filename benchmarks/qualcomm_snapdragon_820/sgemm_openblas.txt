@@ -1,0 +1,15 @@
+OPENBLAS SGEMM - QUALCOMM SNAPDRAGON 820 ADRENO 530
+min=1024, max=4096, times=4
+N     Iteration       Time    GFlops  CPU0    CPU1    CPU2    CPU3
+1024  1       0.413   5.1997185       true    true    true    true
+1024  2       0.394   5.450466        true    true    true    true
+1024  3       0.398   5.3956876       true    true    true    true
+1024  4       0.403   5.3287435       true    true    true    true
+2048  1       4.81    3.5716984       true    true    true    true
+2048  2       4.291   4.0036983       true    true    true    true
+2048  3       4.432   3.8763242       true    true    true    true
+2048  4       4.855   3.538593        true    true    true    true
+4096  1       31.863  4.313434        true    true    true    true
+4096  2       29.08   4.7262363       true    true    true    true
+4096  3       29.48   4.662108        true    true    true    true
+4096  4       29.362  4.6808443       true    true    true    true

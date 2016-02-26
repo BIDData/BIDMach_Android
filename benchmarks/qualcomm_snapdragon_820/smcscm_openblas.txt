@@ -1,0 +1,63 @@
+OPENBLAS SMCSCM - QUALCOMM SNAPDRAGON 820 ADRENO 530
+min=4096, max=4096, times=4, density=0.05
+N     Iteration       Time    GFlops  CPU0    CPU1    CPU2    CPU3
+1024  1       0.159   1.0129485       true    true    true    true
+1024  2       0.083   1.9404677       true    true    true    true
+1024  3       0.141   1.1422611       true    true    true    true
+1024  4       0.106   1.5194229       true    true    true    true
+2048  1       1.08    1.1930397       true    true    true    true
+2048  2       1.086   1.1864482       true    true    true    true
+2048  3       1.078   1.1952531       true    true    true    true
+2048  4       1.062   1.2132607       true    true    true    true
+4096  1       8.616   1.1963685       true    true    true    true
+4096  2       8.6     1.1985943       true    true    true    true
+4096  3       5.506   1.8721234       true    true    true    true
+4096  4       8.679   1.1876842       true    true    true    true
+
+OPENBLAS SMCSCM - QUALCOMM SNAPDRAGON 820 ADRENO 530
+min=4096, max=4096, times=4, density=0.1
+N     Iteration       Time    GFlops  CPU0    CPU1    CPU2    CPU3
+1024  1       0.279   1.1545508       true    true    true    true
+1024  2       0.27    1.1930357       true    true    true    true
+1024  3       0.182   1.7698884       true    true    true    true
+1024  4       0.274   1.1756194       true    true    true    true
+2048  1       2.197   1.1729512       true    true    true    true
+2048  2       2.168   1.1886411       true    true    true    true
+2048  3       2.172   1.1864522       true    true    true    true
+2048  4       2.168   1.1886411       true    true    true    true
+4096  1       17.35   1.1882323       true    true    true    true
+4096  2       17.418  1.1835936       true    true    true    true
+4096  3       17.266  1.1940132       true    true    true    true
+4096  4       17.243  1.1956059       true    true    true    true
+
+OPENBLAS SMCSCM - QUALCOMM SNAPDRAGON 820 ADRENO 530
+min=4096, max=4096, times=4, density=0.2
+N     Iteration       Time    GFlops  CPU0    CPU1    CPU2    CPU3
+1024  1       0.375   1.717977        true    true    true    true
+1024  2       0.371   1.7364998       true    true    true    true
+1024  3       0.371   1.7364998       true    true    true    true
+1024  4       0.372   1.7318317       true    true    true    true
+2048  1       2.882   1.7883261       true    true    true    true
+2048  2       2.885   1.7864666       true    true    true    true
+2048  3       2.622   1.9656582       true    true    true    true
+2048  4       2.93    1.7590293       true    true    true    true
+4096  1       24.122  1.7092968       true    true    true    true
+4096  2       24.202  1.7036465       true    true    true    true
+4096  3       20.17   2.0442069       true    true    true    true
+4096  4       24.474  1.6847124       true    true    true    true
+
+OPENBLAS SMCSCM - QUALCOMM SNAPDRAGON 820 ADRENO 530
+min=4096, max=4096, times=4, density=0.3
+N     Iteration       Time    GFlops  CPU0    CPU1    CPU2    CPU3
+1024  1       0.662   1.4597661       true    true    true    true
+1024  2       0.65    1.4867158       true    true    true    true
+1024  3       0.65    1.4867158       true    true    true    true
+1024  4       0.646   1.4959213       true    true    true    true
+2048  1       5.252   1.4719981       true    true    true    true
+2048  2       4.105   1.8832968       true    true    true    true
+2048  3       5.373   1.4388486       true    true    true    true
+2048  4       4.043   1.9121774       true    true    true    true
+4096  1       41.99   1.4729106       true    true    true    true
+4096  2       31.898  1.9389153       true    true    true    true
+4096  3       42.516  1.4546881       true    true    true    true
+4096  4       42.363  1.4599419       true    true    true    true

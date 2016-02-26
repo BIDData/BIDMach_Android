@@ -1,0 +1,299 @@
+CL SGEMM NAIVE - QUALCOMM SNAPDRAGON 820 ADRENO 530
+min=1024 max=2048 times=4
+N     Iteration       Time    GFlops
+1024  1       0.602   3.5672486
+1024  2       0.287   7.4825215
+1024  3       0.287   7.4825215
+1024  4       0.289   7.430739
+2048  1       2.672   6.429592
+2048  2       2.661   6.4561706
+2048  3       2.668   6.4392314
+2048  4       2.662   6.4537454
+
+CL SGEMM TILED - QUALCOMM SNAPDRAGON 820 ADRENO 530
+min=1024 max=2048 times=4 tileSize=16
+N     Iteration       Time    GFlops
+1024  1       0.489   4.391582
+1024  2       0.193   11.126858
+1024  3       0.194   11.069504
+1024  4       0.194   11.069504
+2048  1       1.804   9.52321
+2048  2       1.797   9.560306
+2048  3       1.793   9.581634
+2048  4       1.796   9.565628
+
+CL SGEMM TILED VECTORIZED - QUALCOMM SNAPDRAGON 820 ADRENO 530
+min=1024 max=2048 times=4 tileSize=8 width=8
+N     Iteration       Time    GFlops
+1024  1       1.892   1.1350337
+1024  2       1.593   1.348075
+1024  3       1.595   1.3463848
+1024  4       1.596   1.3455411
+2048  1       13.414  1.2807418
+2048  2       13.411  1.2810283
+2048  3       13.409  1.2812192
+2048  4       13.41   1.2811238
+
+CL SGEMM TILED VECTORIZED - QUALCOMM SNAPDRAGON 820 ADRENO 530
+min=1024 max=2048 times=4 tileSize=16 width=8
+N     Iteration       Time    GFlops
+1024  1       0.691   3.1077912
+1024  2       0.385   5.5778794
+1024  3       0.383   5.607007
+1024  4       0.385   5.5778794
+2048  1       3.425   5.0160203
+2048  2       3.42    5.0233536
+2048  3       3.419   5.0248227
+2048  4       3.424   5.017485
+
+CL SGEMM TILED VECTORIZED - QUALCOMM SNAPDRAGON 820 ADRENO 530
+min=1024 max=2048 times=4 tileSize=32 width=8
+N     Iteration       Time    GFlops
+1024  1       0.453   4.740582
+1024  2       0.117   18.35456
+1024  3       0.12    17.895699
+1024  4       0.117   18.35456
+2048  1       1.031   16.663307
+2048  2       1.021   16.826513
+2048  3       1.021   16.826513
+2048  4       1.019   16.859537
+
+CL SGEMM TILED VECTORIZED - QUALCOMM SNAPDRAGON 820 ADRENO 530
+min=1024 max=2048 times=4 tileSize=8 width=4
+N     Iteration       Time    GFlops
+1024  1       0.868   2.4740596
+1024  2       0.584   3.6771982
+1024  3       0.586   3.6646476
+1024  4       0.584   3.6771982
+2048  1       5.657   3.0369222
+2048  2       5.649   3.0412228
+2048  3       5.652   3.0396087
+2048  4       5.651   3.0401466
+
+CL SGEMM TILED VECTORIZED - QUALCOMM SNAPDRAGON 820 ADRENO 530
+min=1024 max=2048 times=4 tileSize=16 width=4
+N     Iteration       Time    GFlops
+1024  1       0.44    4.880645
+1024  2       0.146   14.708793
+1024  3       0.144   14.913081
+1024  4       0.147   14.608732
+2048  1       1.385   12.404238
+2048  2       1.376   12.48537
+2048  3       1.371   12.530903
+2048  4       1.372   12.521771
+
+CL SGEMM TILED VECTORIZED - QUALCOMM SNAPDRAGON 820 ADRENO 530
+min=1024 max=2048 times=4 tileSize=32 width=4
+N     Iteration       Time    GFlops
+1024  1       0.411   5.225021
+1024  2       0.083   25.873297
+1024  3       0.088   24.403223
+1024  4       0.088   24.403223
+2048  1       0.749   22.937073
+2048  2       0.736   23.342213
+2048  3       0.737   23.310543
+2048  4       0.738   23.278957
+
+CL SGEMM TILED VECTORIZED REGISTER BLOCKING - QUALCOMM SNAPDRAGON 820 ADRENO 530
+min=1024 max=2048 times=4 tileSize=16 width=4 workPerThread=4
+N     Iteration       Time    GFlops
+1024  1       0.927   2.3165953
+1024  2       0.495   4.338351
+1024  3       0.502   4.277856
+1024  4       0.491   4.373694
+2048  1       4.138   4.1517324
+2048  2       4.156   4.133751
+2048  3       4.18    4.110017
+2048  4       4.162   4.1277914
+
+CL SGEMM TILED VECTORIZED REGISTER BLOCKING - QUALCOMM SNAPDRAGON 820 ADRENO 530
+min=1024 max=2048 times=4 tileSize=16 width=4 workPerThread=8
+N     Iteration       Time    GFlops
+1024  1       3.428   0.6264538
+1024  2       3.193   0.67255986
+1024  3       3.197   0.6717184
+1024  4       3.187   0.67382604
+2048  1       25.544  0.67255986
+2048  2       25.577  0.6716921
+2048  3       25.582  0.6715608
+2048  4       25.581  0.67158705
+
+CL SGEMM TILED VECTORIZED REGISTER BLOCKING - QUALCOMM SNAPDRAGON 820 ADRENO 530
+min=1024 max=2048 times=4 tileSize=32 width=4 workPerThread=4
+N     Iteration       Time    GFlops
+1024  1       0.375   5.726623
+1024  2       0.144   14.913081
+1024  3       0.161   13.3384075
+1024  4       0.166   12.936648
+2048  1       1.009   17.02663
+2048  2       1.031   16.663307
+2048  3       1.058   16.238062
+2048  4       1.035   16.598907
+
+CL SGEMM TILED VECTORIZED REGISTER BLOCKING - QUALCOMM SNAPDRAGON 820 ADRENO 530
+min=1024 max=2048 times=4 tileSize=32 width=4 workPerThread=8
+N     Iteration       Time    GFlops
+1024  1       1.139   1.8854114
+1024  2       0.917   2.341858
+1024  3       0.926   2.3190968
+1024  4       0.946   2.2700675
+2048  1       7.22    2.3794835
+2048  2       7.273   2.3621435
+2048  3       7.141   2.4058073
+2048  4       7.297   2.3543744
+
+CL SGEMM TILED VECTORIZED REGISTER BLOCKING - QUALCOMM SNAPDRAGON 820 ADRENO 530
+min=1024 max=2048 times=4 tileSize=32 width=4 workPerThread=16
+N     Iteration       Time    GFlops
+1024  1       2.908   0.7384744
+1024  2       2.662   0.8067182
+1024  3       2.658   0.80793214
+1024  4       2.639   0.8137491
+2048  1       20.242  0.8487239
+2048  2       20.323  0.8453412
+2048  3       20.317  0.84559083
+2048  4       20.26   0.84796983
+
+
+CL SGEMM TILED VECTORIZED REGISTER BLOCKING - QUALCOMM SNAPDRAGON 820 ADRENO 530
+min=1024 max=2048 times=4 tileSize=64 width=4 workPerThread=8
+N     Iteration       Time    GFlops
+1024  1       0.911   2.3572817
+1024  2       0.53    4.051856
+1024  3       0.521   4.1218495
+1024  4       0.503   4.269351
+2048  1       3.683   4.66464
+2048  2       3.637   4.723637
+2048  3       3.726   4.6108074
+2048  4       3.952   4.347133
+
+CL SGEMM TILED VECTORIZED REGISTER BLOCKING - QUALCOMM SNAPDRAGON 820 ADRENO 530
+min=1024 max=2048 times=4 tileSize=64 width=4 workPerThread=16
+N     Iteration       Time    GFlops
+1024  1       1.059   2.027841
+1024  2       0.83    2.5873299
+1024  3       0.815   2.6349494
+1024  4       0.828   2.5935793
+2048  1       6.12    2.8071682
+2048  2       6.138   2.7989361
+2048  3       6.137   2.799392
+2048  4       6.16    2.7889397
+
+CL SGEMM TILED VECTORIZED REGISTER BLOCKING - QUALCOMM SNAPDRAGON 820 ADRENO 530
+min=1024 max=2048 times=4 tileSize=64 width=4 workPerThread=32
+N     Iteration       Time    GFlops
+1024  1       2.463   0.8718975
+1024  2       2.149   0.9992944
+1024  3       2.142   1.00256
+1024  4       2.143   1.0020922
+2048  1       16.841  1.0201217
+2048  2       16.895  1.0168611
+2048  3       16.858  1.019093
+2048  4       16.913  1.0157789
+
+CL SGEMM TILED VECTORIZED REGISTER BLOCKING - QUALCOMM SNAPDRAGON 820 ADRENO 530
+min=1024 max=2048 times=4 tileSize=16 width=8 workPerThread=8
+N     Iteration       Time    GFlops
+1024  1       2.34    0.91772807
+1024  2       2.161   0.9937453
+1024  3       2.159   0.9946659
+1024  4       2.143   1.0020922
+2048  1       16.849  1.0196372
+2048  2       16.852  1.0194559
+2048  3       16.783  1.0236471
+2048  4       16.894  1.0169214
+
+CL SGEMM TILED VECTORIZED REGISTER BLOCKING - QUALCOMM SNAPDRAGON 820 ADRENO 530
+min=1024 max=2048 times=4 tileSize=32 width=8 workPerThread=8
+N     Iteration       Time    GFlops
+1024  1       1.242   1.7290529
+1024  2       1.028   2.0889919
+1024  3       1.005   2.1367996
+1024  4       1.064   2.0183117
+2048  1       7.786   2.2065077
+2048  2       7.957   2.1590889
+2048  3       7.382   2.3272648
+2048  4       7.876   2.1812937
+
+CL SGEMM TILED VECTORIZED REGISTER BLOCKING - QUALCOMM SNAPDRAGON 820 ADRENO 530
+min=1024 max=2048 times=4 tileSize=32 width=8 workPerThread=16
+N     Iteration       Time    GFlops
+1024  1       2.188   0.9814825
+1024  2       1.977   1.0862335
+1024  3       1.971   1.0895402
+1024  4       1.982   1.0834932
+2048  1       15.317  1.121621
+2048  2       15.338  1.1200854
+2048  3       15.358  1.1186267
+2048  4       15.339  1.1200123
+
+CL SGEMM TILED VECTORIZED REGISTER BLOCKING - QUALCOMM SNAPDRAGON 820 ADRENO 530
+min=1024 max=2048 times=4 tileSize=64 width=8 workPerThread=8
+N     Iteration       Time    GFlops
+1024  1       1.664   1.290555
+1024  2       1.527   1.4063417
+1024  3       1.487   1.4441719
+1024  4       1.389   1.5460645
+2048  1       10.003  1.7174716
+2048  2       9.949   1.7267935
+2048  3       10.649  1.6132847
+2048  4       10.334  1.6624608
+
+CL SGEMM TILED VECTORIZED REGISTER BLOCKING - QUALCOMM SNAPDRAGON 820 ADRENO 530
+min=1024 max=2048 times=4 tileSize=64 width=8 workPerThread=16
+N     Iteration       Time    GFlops
+1024  1       1.302   1.6493729
+1024  2       1.028   2.0889919
+1024  3       1.064   2.0183117
+1024  4       1.051   2.0432765
+2048  1       7.553   2.2745757
+2048  2       7.539   2.2787993
+2048  3       7.858   2.1862905
+2048  4       7.536   2.2797067
+
+CL SGEMM TILED VECTORIZED REGISTER BLOCKING - QUALCOMM SNAPDRAGON 820 ADRENO 530
+min=1024 max=2048 times=4 tileSize=64 width=8 workPerThread=32
+N     Iteration       Time    GFlops
+1024  1       2.084   1.0304624
+1024  2       1.845   1.1639478
+1024  3       1.827   1.1754152
+1024  4       1.831   1.1728475
+2048  1       14.295  1.2018096
+2048  2       14.325  1.1992928
+2048  3       14.297  1.2016416
+2048  4       14.346  1.1975373
+
+CL SGEMM ADRENO - QUALCOMM SNAPDRAGON 820 ADRENO 530
+min=1024 max=2048 times=4 localSize=32
+N     Iteration       Time    GFlops
+1024  1       1.981   1.0840402
+1024  2       1.919   1.119064
+1024  3       1.761   1.2194682
+1024  4       1.758   1.2215493
+2048  1       18.19   0.9444678
+2048  2       18.159  0.94608015
+2048  3       18.131  0.9475412
+2048  4       18.34   0.9367431
+
+CL SGEMM ADRENO - QUALCOMM SNAPDRAGON 820 ADRENO 530
+min=1024 max=2048 times=4 localSize=64
+N     Iteration       Time    GFlops
+1024  1       1.299   1.6531821
+1024  2       1.313   1.6355549
+1024  3       1.327   1.6182996
+1024  4       1.351   1.5895512
+2048  1       13.467  1.2757013
+2048  2       13.499  1.2726773
+2048  3       13.58   1.265086
+2048  4       13.615  1.261834
+
+CL SGEMM ADRENO - QUALCOMM SNAPDRAGON 820 ADRENO 530
+min=1024 max=2048 times=4 localSize=128
+N     Iteration       Time    GFlops
+1024  1       0.99    2.1691754
+1024  2       1.012   2.1220195
+1024  3       1.047   2.0510826
+1024  4       1.026   2.0930638
+2048  1       14.504  1.1844918
+2048  2       14.534  1.1820469
+2048  3       14.563  1.1796931
