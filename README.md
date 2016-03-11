@@ -79,7 +79,7 @@ sbt package
 
 # Copy the files into the correct locations
 cp libs/armeabi-v7a/libjocl.so ../BIDMach_Android/app/src/main/libs/armeabi-v7a/
-cp jocl.jar ../BIDMat/libs/
+cp jocl.jar ../BIDMat/lib/
 cp jocl.jar ../BIDMach_Android/app/libs/
 
 cd ..
