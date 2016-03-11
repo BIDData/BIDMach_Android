@@ -146,7 +146,7 @@ cd ..
 #### Running on Android
 
 ```bash
-cd BIDMach_Android
+cd BIDMach_Android/app
 
 sbt
 > android:run   # run on the device
