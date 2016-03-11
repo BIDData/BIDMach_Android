@@ -100,9 +100,8 @@ make install PREFIX=../BIDMat/jni/src/openblas
 cd ../BIDMat/jni/src/
 cp openblas/lib/libopenblas.a ./
 mkdir include
-cp openblas/include/cblas.h include/openblas_cblas.h
+cp openblas/include/cblas.h include/cblas.h
 cp openblas/include/openblas_config.h include/openblas_config.h
-ln -s include/openblas_cblas.h include/cblas.h
 cd ../../../
 ```
 
