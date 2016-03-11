@@ -93,12 +93,17 @@ for more details.
 ```bash
 git clone https://github.com/xianyi/OpenBLAS.git
 cd OpenBLAS
+
 make HOSTCC=gcc CC=arm-linux-androideabi-gcc NO_LAPACK=1 TARGET=ARMV7
-cp libopenblas.a ../BIDMat/jni/src/
-mkdir ../BIDMat/jni/src/include/
-cp cblas.h ../BIDMat/jni/src/include/openblas_cblas.h
-ln -s ../BIDMat/jni/src/include/openblas_cblas.h ../BIDMat/jni/src/include/cblas.h
-cd ../
+make install PREFIX=../BIDMat/jni/src/openblas
+
+cd ../BIDMat/jni/src/
+cp openblas/lib/libopenblas.a ./
+mkdir include
+cp openblas/include/cblas.h include/openblas_cblas.h
+cp openblas/include/openblas_config.h include/openblas_config.h
+ln -s include/openblas_cblas.h include/cblas.h
+cd ../../../
 ```
 
 #### OR: Use QSML + Symphony (currently unsupported)
