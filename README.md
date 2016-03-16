@@ -100,7 +100,8 @@ make install PREFIX=../BIDMat/jni/src/openblas
 cd ../BIDMat/jni/src/
 cp openblas/lib/libopenblas.a ./
 mkdir include
-cp openblas/include/cblas.h include/cblas.h
+cp openblas/include/cblas.h include/openblas_cblas.h
+cp include/openblas_cblas.h include/cblas.h
 cp openblas/include/openblas_config.h include/openblas_config.h
 cd ../../../
 ```
@@ -115,13 +116,13 @@ Extract and install the libraries:
 
 ```bash
 # QSML
-ar p qsml-0.14.0.deb data.tar.gz | tar -xzvf
+ar p qsml-0.14.0.deb data.tar.gz | tar -xzv
 cp qsml-0.14.0/opt/Qualcomm/QSML-0.14.0/lp64/arm-linux-androideabi/lib/libQSML-0.14.0.so BIDMat/jni/src/
 cp qsml-0.14.0/opt/Qualcomm/QSML-0.14.0/lp64/arm-linux-androideabi/include/* BIDMat/jni/src/include/
-ln -s BIDMat/jni/src/include/qblas_cblas.h BIDMat/jni/src/include/cblas.h
+cp BIDMat/jni/src/include/qblas_cblas.h BIDMat/jni/src/include/cblas.h
 
 # Symphony
-ar p libsymphony-linux-1.0.0.deb data.tar.gz | tar -xzvf
+ar p libsymphony-linux-1.0.0.deb data.tar.gz | tar -xzv
 cp libsymphony/opt/Qualcomm/Symphony/1.0.0/arm-linux-androideabi/lib/libsymphony-1.0.0.so BIDMat/jni/src/
 cp libsymphony/opt/Qualcomm/Symphony/1.0.0/arm-linux-androideabi/lib/libsymphony-cpu-1.0.0.so BIDMat/jni/src/
 ```
