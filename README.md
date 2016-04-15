@@ -27,7 +27,7 @@ Some benchmarks have been done for Qualcomm 805 and 820 boards. You can find the
 
 ## Setup
 
-Install Scala, sbt, Maven, the Android SDK, and the Android NDK.
+Install Scala, sbt, cmake, Maven, the Android SDK, and the Android NDK.
 
 #### Clone this repo
 
@@ -42,6 +42,25 @@ git clone git@github.com:BIDData/BIDMat.git
 cd BIDMat
 git checkout opencl
 cd ..
+```
+
+#### Create an Android standalone toolchain
+
+For more details, see here:
+http://developer.android.com/ndk/guides/standalone_toolchain.html 
+
+```bash
+$ANDROID_NDK/build/tools/make-standalone-toolchain.sh \
+    --platform=android-21 \
+    --toolchain=arm-linux-androideabi-4.9 \
+    --install-dir=$HOME/arm-linux-androideabi
+```
+
+In your `~/.bashrc`, add the following to your path.
+
+```bash
+ANDROID_ARM_TOOLCHAIN=$HOME/arm-linux-androideabi
+export PATH=$PATH:$ANDROID_ARM_TOOLCHAIN/bin
 ```
 
 #### Build JOCL (If using OpenCL)
@@ -76,6 +95,49 @@ cp jocl-0.2.0-RC01-SNAPSHOT.jar ../BIDMach_Android/app/libs/
 cd ..
 ```
 
+#### EITHER: Build OpenBLAS
+
+See (https://github.com/xianyi/OpenBLAS/wiki/How-to-build-OpenBLAS-for-Android)
+for more details.
+
+```bash
+git clone https://github.com/xianyi/OpenBLAS.git
+cd OpenBLAS
+
+make HOSTCC=gcc CC=arm-linux-androideabi-gcc NO_LAPACK=1 TARGET=ARMV7
+make install PREFIX=../BIDMat/jni/src/openblas
+
+cd ../BIDMat/jni/src/
+cp openblas/lib/libopenblas.a ./
+cp openblas/include/cblas.h include/openblas_cblas.h
+cp openblas/include/openblas_config.h include/openblas_config.h
+cd ../../../
+```
+
+Next, uncomment the sections in `BIDMat/jni/src/jni/Android.mk` corresponding to OpenBLAS.
+
+#### OR: Use QSML + Symphony
+
+Download the (Qualcomm Snapdragon Math Libraries)[https://developer.qualcomm.com/software/snapdragon-math-libraries] and
+(Symphony)[https://developer.qualcomm.com/software/symphony-system-manager-sdk].
+For linux, you should download a file that looks like `qsml-0.14.0.deb` and one like `libsymphony-linux-1.0.0.deb` or something.
+
+Extract and install the libraries:
+
+```bash
+# QSML
+ar p qsml-0.14.0.deb data.tar.gz | tar -xzv
+cp qsml-0.14.0/opt/Qualcomm/QSML-0.14.0/lp64/arm-linux-androideabi/lib/libQSML-0.14.0.so BIDMat/jni/src/
+cp qsml-0.14.0/opt/Qualcomm/QSML-0.14.0/lp64/arm-linux-androideabi/include/* BIDMat/jni/src/include/
+
+# Symphony
+ar p libsymphony-linux-1.0.0.deb data.tar.gz | tar -xzv
+cp libsymphony/opt/Qualcomm/Symphony/1.0.0/arm-linux-androideabi/lib/libsymphony-1.0.0.so BIDMat/jni/src/
+cp libsymphony/opt/Qualcomm/Symphony/1.0.0/arm-linux-androideabi/lib/libsymphony-cpu-1.0.0.so BIDMat/jni/src/
+```
+
+Next, uncomment the sections in `BIDMat/jni/src/jni/Android.mk` corresponding to QSML.
+
 #### Build BIDMat
 
 ```bash
@@ -87,9 +149,8 @@ ARCH=linux-arm ./getdevlibs.sh
 cd jni/src
 ndk-build clean
 ndk-build
-cp libs/armeabi-v7a/*.so ../../../BIDMach_Android/app/src/main/libs/armeabi-v7a/
- 
 cd ../..
+cp jni/src/libs/armeabi-v7a/*.so ../BIDMach_Android/app/src/main/libs/armeabi-v7a/
 
 # Build BIDMat.jar
 sbt package
@@ -101,7 +162,7 @@ cd ..
 #### Running on Android
 
 ```bash
-cd BIDMach_Android
+cd BIDMach_Android/app
 
 sbt
 > android:run   # run on the device
