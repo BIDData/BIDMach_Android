@@ -12,19 +12,22 @@
 * JOCL wrapper library working
 * OpenBLAS integrated. Back-filled BLAS routines for non-Intel machines.
 * OpenCL SGEMM routine working and benchmarked. (~75 GFlops on Adreno 530, ~23 GFlops on Adreno 420)
+* Back-fill omatcopy for QSML.
+* Optimize ADAGrad with native implementation
 
 ## Next Steps:
 * Integrate CLBlast + CLTune directly, to get full, performant BLAS functionality on OpenCL.
-* Back-fill omatcopy for QSML.
-* Optimize ADAGrad.
+* Get [boda](https://github.com/moskewcz/boda) working
+* Optimize convolution kernels
+* Flesh out OpenCL matrix and ND array implementations
 
 ## Benchmarks
 
-Benchmarks have been done for Qualcomm 805 and 820 boards. You can find them in the `benchmarks/` folder.
+Some benchmarks have been done for Qualcomm 805 and 820 boards. You can find them in the `benchmarks/` folder.
 
 ## Setup
 
-Install Scala, sbt, the Android SDK, and the Android NDK.
+Install Scala, sbt, Maven, the Android SDK, and the Android NDK.
 
 #### Clone this repo
 
@@ -44,24 +47,31 @@ cd ..
 #### Build JOCL (If using OpenCL)
 
 ```bash
+# install [android-cmake](https://github.com/taka-no-me/android-cmake)
+# Linux:
+cd /usr/share/cmake-3.2/Modules/
+sudo wget https://raw.githubusercontent.com/taka-no-me/android-cmake/master/android.toolchain.cmake
+
+cd <development-base-directory>
 git clone git@github.com:phlip9/JOCL.git
+git clone git@github.com:phlip9/JOCLCommon.git
 cd JOCL
 
-# Build the native OpenCL libraries for android
+# Build the native OpenCL libraries for Android
 mkdir build
 cd build
-# See cmake/android.toolchain.cmake for cmake flag details
-cmake -DCMAKE_TOOLCHAIN_FILE=../cmake/android.toolchain.cmake -DCMAKE_BUILD_TYPE=Release -DANDROID_ABI=armeabi-v7a -DANDROID_NATIVE_API_LEVEL=19 ..
+# See [android-cmake] for extended parameter descriptions
+cmake -DCMAKE_TOOLCHAIN_FILE=android.toolchain -DCMAKE_BUILD_TYPE=Release -DANDROID_ABI=armeabi-v7a -DANDROID_NATIVE_API_LEVEL=21 ..
 cmake --build .
 cd ..
 
 # Build the .jar file
-sbt package
+mvn clean install -DskipTests
 
 # Copy the files into the correct locations
-cp libs/armeabi-v7a/libjocl.so ../BIDMach_Android/
-cp jocl.jar ../BIDMat/libs/
-cp jocl.jar ../BIDMach_Android/app/libs/
+cp nativeLibraries/armeabi-v7a/libJOCL_0_2_0-android-arm.so ../BIDMach_Android/app/src/main/libs/armeabi-v7a/ 
+cp jocl-0.2.0-RC01-SNAPSHOT.jar ../BIDMat/libs/
+cp jocl-0.2.0-RC01-SNAPSHOT.jar ../BIDMach_Android/app/libs/
 
 cd ..
 ```
