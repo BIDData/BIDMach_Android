@@ -3,7 +3,7 @@ import android.Dependencies.{LibraryDependency, aar}
 
 android.Plugin.androidBuild
 
-platformTarget in Android := "android-19"
+platformTarget in Android := "android-21"
 
 name := "BIDMach_Android"
 
