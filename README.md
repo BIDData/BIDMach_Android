@@ -72,8 +72,8 @@ cd /usr/share/cmake-3.2/Modules/
 sudo wget https://raw.githubusercontent.com/taka-no-me/android-cmake/master/android.toolchain.cmake
 
 cd <development-base-directory>
-git clone git@github.com:phlip9/JOCL.git
-git clone git@github.com:phlip9/JOCLCommon.git
+git clone git@github.com:gpu/JOCL.git
+git clone git@github.com:gpu/JOCLCommon.git
 cd JOCL
 
 # Build the native OpenCL libraries for Android
@@ -88,9 +88,8 @@ cd ..
 mvn clean install -DskipTests
 
 # Copy the files into the correct locations
-cp nativeLibraries/armeabi-v7a/libJOCL_0_2_0-android-arm.so ../BIDMach_Android/app/src/main/libs/armeabi-v7a/ 
-cp jocl-0.2.0-RC01-SNAPSHOT.jar ../BIDMat/libs/
-cp jocl-0.2.0-RC01-SNAPSHOT.jar ../BIDMach_Android/app/libs/
+cp jocl-2.0.1-SNAPSHOT.jar ../BIDMat/lib/
+cp jocl-2.0.1-SNAPSHOT.jar ../BIDMach_Android/app/libs/
 
 cd ..
 ```

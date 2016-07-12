@@ -14,6 +14,7 @@ if [ ! -f $APK_PATH ]; then
     exit 1
 fi
 
+echo ssh $REMOTE
 ssh $REMOTE << EOF
     echo mkdir -p ~/.tmp/
     mkdir -p ~/.tmp/
