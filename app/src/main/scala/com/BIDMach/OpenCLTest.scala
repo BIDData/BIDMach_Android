@@ -7,7 +7,7 @@ import org.jocl._
 
 object OpenCLTest {
 
-  val TAG = "BIDMach_OpenCLTest"
+  val TAG = "BIDMach_Android"
 
   private val program_source =
     """
